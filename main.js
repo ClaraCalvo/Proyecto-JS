@@ -1,10 +1,10 @@
-//Bienvenida (a los 3 segundos)
+//Bienvenida
 let nombre = prompt("¡REPELLO MUGGLETUM! Ingresa por favor tu nombre mágico:");
-  
+
 while (nombre === null || nombre === "") {
   nombre = prompt("Ingresá tu nombre por favor");
 }
-  
+
 let nombreMayus = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
 
 alert("¡" + nombreMayus + ", bienvenido/a al Colegio Hogwarts de Magia y Hechicería!\n\nEl día de hoy serás asignado/a a una de nuestras Casas: Gryffindor, Hufflepuff, Ravenclaw o Slytherin.\n\nEl Sombrero Seleccionador evaluará tu personalidad, tus valores y tus fortalezas para determinar cuál de las Casas de Hogwarts es la adecuada para vos, ya que cada una de ellas tiene características únicas y representa diferentes cualidades.\n\nUna vez que seas seleccionado/a, te explicaremos por qué fuiste elegido/a en tu Casa y los valores que compartís con tus compañeros, así podrás sentirte parte de esta comunidad mágica.\n\n¿Empezamos?");
@@ -72,29 +72,15 @@ realizarTest()
 const maximo = Math.max(...Object.values(contador));
 console.log(maximo);
 
-let imagenFondo = document.getElementById("fondo");
-
 //Condiciones > Casa asignada
 if (contador.a === maximo) {
-  imagenFondo.src = "img/gryffindor.jpg";
-  setTimeout(function() {
-    alert("¡GRYFFINDOR! \n\n¡Felicidades! Tu valentía y coraje te han llevado a la casa de Gryffindor. Sos valiente, decidido/a y siempre estás dispuesto/a a luchar por lo que crees justo. Tu espíritu audaz te llevará a grandes aventuras y a defender a los más débiles.");
-  }, 100);
+  alert("¡GRYFFINDOR! \n\n¡Felicidades! Tu valentía y coraje te han llevado a la casa de Gryffindor. Sos valiente, decidido/a y siempre estás dispuesto/a a luchar por lo que crees justo. Tu espíritu audaz te llevará a grandes aventuras y a defender a los más débiles.");
 } else if  (contador.b === maximo) {
-  imagenFondo.src = "img/slytherin.jpeg";
-  setTimeout(function() {
-    alert("¡SLYTHERIN! \n\nTu astucia y determinación te han llevado a la casa de Slytherin. Sos ambicioso/a, ingenioso/a y estás dispuesto/a a hacer lo necesario para alcanzar tus metas. Tu determinación te permitirá destacarte y lograr grandes cosas.");
-  }, 100);
+  alert("¡SLYTHERIN! \n\nTu astucia y determinación te han llevado a la casa de Slytherin. Sos ambicioso/a, ingenioso/a y estás dispuesto/a a hacer lo necesario para alcanzar tus metas. Tu determinación te permitirá destacarte y lograr grandes cosas.");
 } else if (contador.c === maximo) {
-  imagenFondo.src = "img/ravenclaw.jpg";
-  setTimeout(function() {
-    alert("¡RAVENCLAW! \n\n¡Enhorabuena! Tu inteligencia y sed de conocimiento te han llevado a la casa de Ravenclaw. Eres creativo/a, curioso/a y siempre buscas aprender más. Tu mente aguda y tu amor por el saber te guiarán hacia grandes descubrimientos y logros académicos.");
-  }, 100);
+  alert("¡RAVENCLAW! \n\n¡Enhorabuena! Tu inteligencia y sed de conocimiento te han llevado a la casa de Ravenclaw. Eres creativo/a, curioso/a y siempre buscas aprender más. Tu mente aguda y tu amor por el saber te guiarán hacia grandes descubrimientos y logros académicos.");
 } else if (contador.d === maximo) {
-  imagenFondo.src = "img/hufflepuff.jpg";
-  setTimeout(function() {
-    alert("¡HUFFLEPUFF! \n\n¡Maravilloso! Tu lealtad y generosidad te han llevado a la casa de Hufflepuff. Sos amable, paciente y siempre estás dispuesto/a a ayudar a los demás. Tu espíritu solidario te llevará a construir relaciones fuertes y a encontrar la felicidad en la compañía de tus amigos.");
-  },100);
+  alert("¡HUFFLEPUFF! \n\n¡Maravilloso! Tu lealtad y generosidad te han llevado a la casa de Hufflepuff. Sos amable, paciente y siempre estás dispuesto/a a ayudar a los demás. Tu espíritu solidario te llevará a construir relaciones fuertes y a encontrar la felicidad en la compañía de tus amigos.");
 } else {
   console.log("No se han registrado respuestas.");
 }
