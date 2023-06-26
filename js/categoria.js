@@ -39,11 +39,11 @@ function verProducto(nombre) {
     location.href = "/paginas/producto.html";
 }
 
-muestroProductosCategoria();
-botonCarrito();
-
 //Nombre de Categoría
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get("categoria");
 const categoriaCapitalizada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 document.getElementById("nombreCategoria").textContent = categoriaCapitalizada;
+
+muestroProductosCategoria();
+botonCarrito();
