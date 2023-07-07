@@ -39,6 +39,6 @@ function cargoProductosLS() {
 }
 
 guardoProductosLS();
-botonCarrito();
+
 
 
