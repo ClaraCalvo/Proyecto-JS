@@ -109,7 +109,7 @@ function cantidadProductosCarrito() {
 function botonCarrito() {
     let botonMaleta = document.getElementById("carrito");
     let contenidoCarrito = `<div style="display: flex">
-      <p id="menuMovil">Maleta</p><button type="button" class="btn position-relative"><img id="imagenCarritoMovil" style="margin-top: -15px;" src="../img/icono.jpg" alt="carrito" width="34">
+      <p id="menuMovil">Maleta</p><button type="button" class="btn position-relative"><img id="imagenCarritoMovil" style="margin-top: -15px;" src="./img/icono.jpg" alt="carrito" width="34">
       <span class="position-absolute top-0 translate-middle badge rounded-pill" style="background-color: #a85">
       ${cantidadProductosCarrito()}
       </span>
