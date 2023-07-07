@@ -1,6 +1,6 @@
 //Todos los Productos
 const productos = [
-    {id: 1, categoria: "Varitas", nombre: "Varita Hermione", precio: 1000, imagen: "../img/varita-hermione.png", descripcion: "Fabricada con corazón de dragón, esta varita es ideal para aquellos que valoran el conocimiento y la inteligencia. Te ayudará a dominar los hechizos más complejos y a brillar en tus estudios."},
+    {id: 1, categoria: "Varitas", nombre: "Varita Hermione", precio: 1000, imagen: "./img/varita-hermione.png", descripcion: "Fabricada con corazón de dragón, esta varita es ideal para aquellos que valoran el conocimiento y la inteligencia. Te ayudará a dominar los hechizos más complejos y a brillar en tus estudios."},
     {id: 2, categoria: "Varitas", nombre: "Varita Harry Potter", precio: 1000, imagen: "../img/varita-harry.png", descripcion: "La icónica varita del elegido. Con su núcleo de pluma de fénix, esta varita te permitirá desatar todo tu poder y enfrentar grandes desafíos."},
     {id: 3, categoria: "Varitas", nombre: "Varita Ron", precio: 1000, imagen: "../img/varita-ron.png", descripcion: "Esta varita de madera de sauce es perfecta para aquellos que buscan un toque de lealtad y valentía. Te acompañará en tus travesuras y en la búsqueda de la amistad verdadera."},
     {id: 4, categoria: "Varitas", nombre: "Varita Draco Malfoy", precio: 1000, imagen: "../img/varita-draco.png", descripcion: "Esta varita de madera de espino blanco es el símbolo de la astucia y la determinación. Te permitirá desafiar tus límites y enfrentar cualquier obstáculo con elegancia y estilo."},
