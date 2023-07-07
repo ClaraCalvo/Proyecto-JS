@@ -71,6 +71,8 @@ function muestroProductosCarrito() {
     document.getElementById("contenidoCarrito").innerHTML = contenidoCarrito;
 };
 
+muestroProductosCarrito();
+
 //Eliminar UN SÓLO Producto del carrito
 function eliminoProductoCarrito(id) {
     const carrito = cargoCarritoLS();
@@ -118,11 +120,12 @@ function botonCarrito() {
     botonMaleta.innerHTML = contenidoCarrito;
 }
 
-/* muestroProductosCarrito();
-botonCarrito(); */
+/* 
+muestroProductosCarrito();
+botonCarrito(); 
+*/
 
 botonCarrito();
-muestroProductosCarrito();
 
 // {
 // [ 
