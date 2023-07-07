@@ -118,8 +118,11 @@ function botonCarrito() {
     botonMaleta.innerHTML = contenidoCarrito;
 }
 
-muestroProductosCarrito();
+/* muestroProductosCarrito();
+botonCarrito(); */
+
 botonCarrito();
+muestroProductosCarrito();
 
 // {
 // [ 
