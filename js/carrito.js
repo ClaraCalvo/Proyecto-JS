@@ -69,7 +69,6 @@ function muestroProductosCarrito() {
     }
 
     document.getElementById("contenidoCarrito").innerHTML = contenidoCarrito;
-    console.log(document.getElementById("contenidoCarrito"));
 };
 
 //Eliminar UN SÓLO Producto del carrito
