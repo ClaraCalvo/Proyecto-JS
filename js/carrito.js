@@ -31,14 +31,15 @@ function agregarProducto(id) {
 
 //Carrito > HTML
 function muestroProductosCarrito() {
-    let productos = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
+/*     let productos = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
+ */    let productosCarrito = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
     let contenidoCarrito = "";
 
     if (cantidadProductosCarrito() > 0) {
 
         contenidoCarrito += `<table class="table table-dark table-striped">`;
 
-        productos.forEach(producto => {
+        productosCarrito.forEach(producto => {
           contenidoCarrito += `<tr class="align-items-center justify-content-center">
 
           <td><a href="#" onclick="verProducto('${producto.nombre}')"><img src="${producto.imagen}" alt="${producto.nombre}" width="80"></a></td>
@@ -69,9 +70,8 @@ function muestroProductosCarrito() {
     }
 
     document.getElementById("contenidoCarrito").innerHTML = contenidoCarrito;
+    console.log(document.getElementById("contenidoCarrito"));
 };
-
-muestroProductosCarrito();
 
 //Eliminar UN SÓLO Producto del carrito
 function eliminoProductoCarrito(id) {
@@ -126,6 +126,7 @@ botonCarrito();
 */
 
 botonCarrito();
+muestroProductosCarrito();
 
 // {
 // [ 
