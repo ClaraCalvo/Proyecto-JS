@@ -5,7 +5,7 @@ function productoIndividual() {
         <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">
     </div>
     <div class="col-md-5">
-        <a id="linkCategoria" href="../paginas/categoria.html?categoria=${producto.categoria.toLowerCase()}"><p class="text-secondary link-warning m-0">${producto.categoria}</p></a>
+        <a id="linkCategoria" href="../categoria.html?categoria=${producto.categoria.toLowerCase()}"><p class="text-secondary link-warning m-0">${producto.categoria}</p></a>
         <h1 class="text-white">${producto.nombre}
         <p class="card-text fw-bold fs-5" style="color: #a85">$${producto.precio}<p>
         <p class="fw-light fs-5 text-wrap descripcion">${producto.descripcion}</p>

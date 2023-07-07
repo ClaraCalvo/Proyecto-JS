@@ -32,7 +32,7 @@ function agregarProducto(id) {
 //Carrito > HTML
 function muestroProductosCarrito() {
 /*     let productos = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
- */    let productosCarrito = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
+ */ let productosCarrito = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
     let contenidoCarrito = "";
 
     if (cantidadProductosCarrito() > 0) {
@@ -43,7 +43,6 @@ function muestroProductosCarrito() {
           contenidoCarrito += `<tr class="align-items-center justify-content-center">
 
           <td><a href="#" onclick="verProducto('${producto.nombre}')"><img src="${producto.imagen}" alt="${producto.nombre}" width="80"></a></td>
-
 
           <td class="align-middle text-light">${producto.nombre}</td>
           <td class="align-middle text-light">${producto.cantidad} x $${producto.precio}</td>
@@ -65,7 +64,7 @@ function muestroProductosCarrito() {
     }   else {
         contenidoCarrito += `<div class="alert alert-dark text-center" role="alert">
             ¡Tu Maleta a Hogwarts está vacía!<br></br>
-            ¡Apurate a comprar en el <a href="../index.html" class="alert-link">Callejón Diagon</a> antes de que se vaya el Tren!
+            ¡Apurate a comprar en el <a href="index.html" class="alert-link">Callejón Diagon</a> antes de que se vaya el Tren!
         </div>`
     }
 

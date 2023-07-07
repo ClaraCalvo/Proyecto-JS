@@ -2,7 +2,7 @@
 function redirigirCategoria(event, categoria) {
     event.preventDefault();
     
-    window.location.href = `paginas/categoria.html?categoria=${categoria}`;
+    window.location.href = `categoria.html?categoria=${categoria}`;
 }
 
 //Productos por Categoría
@@ -36,7 +36,7 @@ function verProducto(nombre) {
     let producto = productos.find(item => item.nombre == nombre);
 
     localStorage.setItem("producto", JSON.stringify(producto));
-    location.href = "/paginas/producto.html";
+    location.href = "producto.html";
 }
 
 //Nombre de Categoría
