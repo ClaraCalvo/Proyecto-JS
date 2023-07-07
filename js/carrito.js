@@ -47,7 +47,7 @@ function muestroProductosCarrito() {
           <td class="align-middle text-light">${producto.nombre}</td>
           <td class="align-middle text-light">${producto.cantidad} x $${producto.precio}</td>
           <td class="align-middle text-light">$${producto.cantidad * producto.precio}</td>
-          <td class="align-middle"><img class="zoomProd" src="../img/trash.svg" alt="eliminar" width="25" onclick="eliminoProductoCarrito(${producto.id});"></td>`;
+          <td class="align-middle"><img class="zoomProd" src="./img/trash.svg" alt="eliminar" width="25" onclick="eliminoProductoCarrito(${producto.id});"></td>`;
         });
 
         const totalCarrito = sumaTotal();
