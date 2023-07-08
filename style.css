@@ -131,7 +131,9 @@ body {
     background-color: rgba(138, 138, 138, 0.45);
 }
   
-
+.espaciado-botones {
+    margin-bottom: 5px;
+  }
 /* 
 {
 [  

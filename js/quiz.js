@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     contenedorResultados: document.getElementById('results-container'),
     preguntas: [
       {
-        pregunta: '¿Qué cualidad valoras más en ti mismo/a?',
+        pregunta: '¿Qué cualidad valoras más en vos mismo/a?',
         respuestas: [
           { opcion: 'a', texto: 'Valentía y determinación.' },
           { opcion: 'b', texto: 'Ambición y astucia.' },
@@ -25,42 +25,41 @@ window.addEventListener('DOMContentLoaded', (event) => {
         ],
       },
       {
-        pregunta: '¿Qué cualidad valoras más en ti mismo/a??????',
+        pregunta: '¿Cómo te enfrentas a los desafíos?',
         respuestas: [
-          { opcion: 'a', texto: 'Valentía y determinación.' },
-          { opcion: 'b', texto: 'Ambición y astucia.' },
-          { opcion: 'c', texto: 'Inteligencia y creatividad.' },
-          { opcion: 'd', texto: 'Lealtad y generosidad.' },
+          { opcion: 'a', texto: 'Me lanzo de cabeza a los desafíos, sin miedo y dispuesto/a a enfrentar lo que venga.' },
+          { opcion: 'b', texto: 'Abordo los desafíos de manera estratégica, buscando oportunidades para alcanzar mis objetivos.' },
+          { opcion: 'c', texto: 'Analizo los desafíos cuidadosamente, aplicando mi conocimiento para encontrar soluciones ingeniosas.' },
+          { opcion: 'd', texto: 'Afronto los desafíos con persistencia y trabajo en equipo, confiando en el apoyo de mis seres queridos.' },
         ],
       },
       {
-        pregunta: '¿Qué cualidad valoras más en ti mismo/a?',
+        pregunta: '¿Qué tipo de ambiente te hace sentir más cómodo/a?',
         respuestas: [
-          { opcion: 'a', texto: 'Valentía y determinación.' },
-          { opcion: 'b', texto: 'Ambición y astucia.' },
-          { opcion: 'c', texto: 'Inteligencia y creatividad.' },
-          { opcion: 'd', texto: 'Lealtad y generosidad.' },
+          { opcion: 'a', texto: 'Me siento más cómodo/a en un ambiente lleno de emoción y aventura.' },
+          { opcion: 'b', texto: 'Prefiero un ambiente en el que pueda ejercer mi influencia y tener oportunidades para destacarme.' },
+          { opcion: 'c', texto: 'En un entorno intelectualmente estimulante y rodeado de debates profundos.' },
+          { opcion: 'd', texto: 'Disfruto de un ambiente cálido y acogedor.' },
         ],
       },
       {
-        pregunta: '¿Qué cualidad valoras más en ti mismo/a??????',
+        pregunta: '¿Qué valoras más en un amigo/a?',
         respuestas: [
-          { opcion: 'a', texto: 'Valentía y determinación.' },
-          { opcion: 'b', texto: 'Ambición y astucia.' },
-          { opcion: 'c', texto: 'Inteligencia y creatividad.' },
-          { opcion: 'd', texto: 'Lealtad y generosidad.' },
+          { opcion: 'a', texto: 'Valoraría en un amigo/a que sea alguien en quien pueda confiar plenamente.' },
+          { opcion: 'b', texto: 'Valoraría en un amigo/a su lealtad y su determinación.' },
+          { opcion: 'c', texto: 'En un amigo/a, aprecio su sabiduría y su mente aguda, alguien con quien pueda tener conversaciones profundas.' },
+          { opcion: 'd', texto: 'Lo que valoro en un amigo/a es su amabilidad y su generosidad, alguien que esté dispuesto/a a ayudar y a ser un apoyo incondicional.' },
         ],
       },
       {
-        pregunta: '¿Qué cualidad valoras más en ti mismo/a?',
+        pregunta: 'Si te encontraras con una criatura mágica desconocida, ¿qué harías?',
         respuestas: [
-          { opcion: 'a', texto: 'Valentía y determinación.' },
-          { opcion: 'b', texto: 'Ambición y astucia.' },
-          { opcion: 'c', texto: 'Inteligencia y creatividad.' },
-          { opcion: 'd', texto: 'Lealtad y generosidad.' },
+          { opcion: 'a', texto: 'Me acercaría con valentía y curiosidad.' },
+          { opcion: 'b', texto: 'Evaluaría si representa alguna amenaza o beneficio personal.' },
+          { opcion: 'c', texto: 'Observaría y analizaría su comportamiento para ampliar mi conocimiento.' },
+          { opcion: 'd', texto: 'Me acercaría con compasión y respeto, buscando su seguridad y comodidad.' },
         ],
       },
-      // Resto de preguntas...
     ],
 
     comenzarQuiz() {
@@ -86,13 +85,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
       if (this.indicePreguntaActual < this.preguntas.length) {
         const preguntaActual = this.preguntas[this.indicePreguntaActual];
         this.contenedorPregunta.innerHTML = `<h2>${preguntaActual.pregunta}</h2>`;
+
         preguntaActual.respuestas.forEach((respuesta) => {
           const botonRespuesta = document.createElement('button');
           botonRespuesta.textContent = respuesta.texto;
           botonRespuesta.addEventListener('click', () => {
             this.procesarRespuesta(respuesta.opcion);
           });
-          this.contenedorPregunta.appendChild(botonRespuesta);
+          //nuevo
+          const contenedorRespuesta = document.createElement('div');
+          contenedorRespuesta.classList.add('espaciado-botones');
+          contenedorRespuesta.appendChild(botonRespuesta);
+          //nuevo
+          this.contenedorPregunta.appendChild(contenedorRespuesta);
         });
         this.indicePreguntaActual++;
       } else {
@@ -107,8 +112,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     mostrarResultados() {
       this.contenedorPregunta.innerHTML = '';
-      this.contenedorResultados.innerHTML = `<h2>Resultado del Cuestionario:</h2>`;
       const opcionMaxima = this.calcularOpcionMaxima();
+      this.contenedorResultados.innerHTML = `<h2>Resultado:</h2>`;
       const resultadoTexto = `¡Felicitaciones, ${this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1).toLowerCase()}! Tu personalidad refleja los valores de ${this.obtenerNombreCasa(opcionMaxima)}.`;
 
       const resultadoClase = `${this.obtenerClaseCasa(opcionMaxima)}-background`;

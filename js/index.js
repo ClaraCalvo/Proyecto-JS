@@ -24,12 +24,10 @@ function cargarProductosDestacados() {
 }
   
 function generarHTMLProducto(producto) {
-    return `
-      <div class="col-md-4">
-        <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">
-        <p class="text-light">${producto.nombre}</p>
-      </div>
-    `;
+    return `<div class="col-md-4">
+    <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">
+    <p class="text-light">${producto.nombre}</p>
+  </div>`;
 }
   
 function mostrarProductosDestacados(productos) {
