@@ -94,13 +94,43 @@ body {
     }
 }
 
-/*Producto Individual */
+/*Producto Individual*/
 #linkCategoria {
     text-decoration: none;
 }
 #linkCategoria:hover {
     color: #a85;
 }
+
+/*Quiz*/
+.gryffindor-background {
+    background-image: url('./img/gryffindor.jpg') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.slytherin-background {
+    background-image: url('./img/slytherin.jpeg') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.hufflepuff-background {
+    background-image: url('./img/hufflepuff.jpg') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.ravenclaw-background {
+    background-image: url('./img/ravenclaw.jpg') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.swal-overlay {
+    background-color: rgba(138, 138, 138, 0.45);
+}
+  
 
 /* 
 {

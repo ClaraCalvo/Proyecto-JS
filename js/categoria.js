@@ -1,10 +1,3 @@
-/* //Redirijo a Categoría desde Index/Callejon Diagon
-function redirigirCategoria(event, categoria) {
-    event.preventDefault();
-    
-    window.location.href = `categoria.html?categoria=${categoria}`;
-} */
-
 //Productos por Categoría
 function muestroProductosCategoria() {
     
@@ -30,21 +23,11 @@ function muestroProductosCategoria() {
     document.getElementById("contenidoCategoria").innerHTML = contenido;
 }
 
-//Click en producto > Lleva a producto > Guarda en LS
-/* function verProducto(nombre) { 
-    let productos = cargoProductosLS();
-    let producto = productos.find(item => item.nombre == nombre);
-
-    localStorage.setItem("producto", JSON.stringify(producto));
-    location.href = "producto.html";
-} */
-
 //Nombre de Categoría
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get("categoria");
 const categoriaCapitalizada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 document.getElementById("nombreCategoria").textContent = categoriaCapitalizada;
-
 
 muestroProductosCategoria();
 botonCarrito();

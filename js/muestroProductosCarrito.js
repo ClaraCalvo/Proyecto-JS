@@ -1,6 +1,6 @@
 //Carrito > HTML
 function muestroProductosCarrito() {
-    let productosCarrito = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
+    let productosCarrito = cargoCarritoLS();
     let contenidoCarrito = "";
 
     if (cantidadProductosCarrito() > 0) {

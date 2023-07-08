@@ -1,5 +1,5 @@
 function productoIndividual() {
-    const producto = JSON.parse(localStorage.getItem("producto")); //en "producto" está el objeto indicado
+    const producto = JSON.parse(localStorage.getItem("producto"));
 
     let contenidoProducto = `<div class="col-md-4 offset-md-2">
         <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">

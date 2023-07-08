@@ -4,3 +4,4 @@ function redirigirCategoria(event, categoria) {
     
     window.location.href = `categoria.html?categoria=${categoria}`;
 }
+

@@ -17,16 +17,33 @@ function agregarProducto(id) {
     const carrito = cargoCarritoLS();
 
     if (productoEnCarrito(id)) { 
-        let posicion = carrito.findIndex(item => item.id === id); //devuelve posicion
-        carrito[posicion].cantidad += 1; //mas de un producto
+        let posicion = carrito.findIndex(item => item.id === id);
+        carrito[posicion].cantidad += 1;
     } else {
         const producto = productos.find(item => item.id === id);
-        producto.cantidad = 1; //un solo producto
+        producto.cantidad = 1;
         carrito.push(producto);
     }
 
     guardoCarritoLS(carrito);
     botonCarrito();
+
+    setTimeout(() => {
+        Toastify({
+            text: "Producto agregado al carrito",
+            duration: 3000,
+            destination: "carrito.html",
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #02020a, #a85)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+    }, 1000);
 }
 
 //nuevo
@@ -37,55 +54,11 @@ function verProducto(nombre) {
     localStorage.setItem("producto", JSON.stringify(producto));
     location.href = "producto.html";
 }
-  
-
-/*     let productos = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
- */ 
-//Carrito > HTML
-/* function muestroProductosCarrito() {
-    let productosCarrito = cargoCarritoLS(); //acá tengo ahora los productos de mi carrito
-    let contenidoCarrito = "";
-
-    if (cantidadProductosCarrito() > 0) {
-
-        contenidoCarrito += `<table class="table table-dark table-striped">`;
-
-        productosCarrito.forEach(producto => {
-          contenidoCarrito += `<tr class="align-items-center justify-content-center">
-
-          <td><a href="#" onclick="verProducto('${producto.nombre}')"><img src="${producto.imagen}" alt="${producto.nombre}" width="80"></a></td>
-
-          <td class="align-middle text-light">${producto.nombre}</td>
-          <td class="align-middle text-light">${producto.cantidad} x $${producto.precio}</td>
-          <td class="align-middle text-light">$${producto.cantidad * producto.precio}</td>
-          <td class="align-middle"><img class="zoomProd" src="./img/trash.svg" alt="eliminar" width="25" onclick="eliminoProductoCarrito(${producto.id});"></td>`;
-        });
-
-        const totalCarrito = sumaTotal();
-
-        contenidoCarrito += `<tr class="align-items-center justify-content-center">
-          <td>&nbsp;</td>
-          <td><b>Total<b></td>
-          <td>&nbsp;</td>
-          <td><b>$${totalCarrito}<b></td>
-          <td>&nbsp;</td>
-        </tr>
-        </table>`;
-
-    }   else {
-        contenidoCarrito += `<div class="alert alert-dark text-center" role="alert">
-            ¡Tu Maleta a Hogwarts está vacía!<br></br>
-            ¡Apurate a comprar en el <a href="index.html" class="alert-link">Callejón Diagon</a> antes de que se vaya el Tren!
-        </div>`
-    }
-
-    document.getElementById("contenidoCarrito").innerHTML = contenidoCarrito;
-}; */
 
 //Eliminar UN SÓLO Producto del carrito
 function eliminoProductoCarrito(id) {
     const carrito = cargoCarritoLS();
-    let posicion = carrito.findIndex(item => item.id === id); //devuelve posicion
+    let posicion = carrito.findIndex(item => item.id === id);
 
     if (carrito[posicion].cantidad > 1) {
         carrito[posicion].cantidad -= 1;
@@ -96,6 +69,22 @@ function eliminoProductoCarrito(id) {
     guardoCarritoLS(carrito);
     botonCarrito();
     muestroProductosCarrito();
+
+    setTimeout(() => {
+        Toastify({
+            text: "Producto eliminado del carrito",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "red",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
+    }, 500);
 }
 
 //Suma Total de Productos
@@ -129,13 +118,4 @@ function botonCarrito() {
     botonMaleta.innerHTML = contenidoCarrito;
 }
 
-/* 
-muestroProductosCarrito();
-botonCarrito(); 
-*/
-
 botonCarrito();
-/* muestroProductosCarrito(); */
-
-// {
-// [ 
