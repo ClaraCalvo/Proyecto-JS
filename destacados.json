@@ -1,0 +1,5 @@
+[
+    {"nombre": "Varita Harry Potter", "imagen": "./img/varita-harry.png"},
+    {"nombre": "Anteojos", "imagen": "./img/accesorios-anteojos.png"},
+    {"nombre": "Remera Hogwarts", "imagen": "./img/prenda-remeraHogwarts.png"}
+]
